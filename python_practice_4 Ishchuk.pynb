@@ -1,0 +1,603 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/MartaIshchuk/hello-world/blob/main/python_practice_4%20Ishchuk.pynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# I. Functions. Arguments."
+      ],
+      "metadata": {
+        "id": "kXpppdVm6wFy"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. (5б) Назвіть основні 4 смислові  частини, з яких складається функція."
+      ],
+      "metadata": {
+        "id": "u_krJdlbAkVz"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Функція складається з трьох частин: імені, параметрів, тіла та з поверненим значенням(None)"
+      ],
+      "metadata": {
+        "id": "KKTrTXmHAptb"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. (3б) Визначте функцію, що приймає 2 аргументи та повертає результат ділення 1го аргумента на інший."
+      ],
+      "metadata": {
+        "id": "ORM4PqJQAtDM"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 24,
+      "metadata": {
+        "id": "EuDx-z8M6sLo",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "77c6279e-a561-4a7d-f22a-505a053c4081"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "def function(a, b):\n",
+        "    return a / b\n",
+        "\n",
+        "result = function(26, 13)\n",
+        "print(result)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. (2б) Викличте вище визначену функцію, де другий аргумент дорівнює 0."
+      ],
+      "metadata": {
+        "id": "5joQGQ-SAyMe"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def function(a, b):\n",
+        "    return a / b\n",
+        "\n",
+        "result = function(0, 26)\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "id": "V5cBV1LOA3d-",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "cc5d878c-b257-4f7f-c271-045f5565cf76"
+      },
+      "execution_count": 40,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. (4б) Перевизначте функцію так, щоби у випадку ділення на 0 функція повертала None, а в решті випадків - результат розрахунків."
+      ],
+      "metadata": {
+        "id": "QyimWgW8A43-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def f(a, b):\n",
+        "    if b == 0:\n",
+        "        return None\n",
+        "    return a / b\n",
+        "\n",
+        "def function(a, b):\n",
+        "    result = f(a, b)\n",
+        "    return result\n",
+        "\n",
+        "result = function(26, 0)\n",
+        "print(result)\n",
+        ""
+      ],
+      "metadata": {
+        "id": "7VIODtSjA8Ek",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "5ce1294b-f073-4075-91fc-5f0922c3f0d0"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "None\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5. (5б) Визначте функцію, що віднімає одне число від іншого (підказка: це буде 2 аргументи функції). При чому, якщо не визначити, скільки саме має бути віднято від числа, за замовчуванням має відніматися 1. Викличте функцію, передаючи тільки один аргумент."
+      ],
+      "metadata": {
+        "id": "Y8mN0GfkA81l"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def numbers(a, b=1):\n",
+        "    return a - b\n",
+        "\n",
+        "result = numbers(15)\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "id": "vg1kxkdgBA50",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "2337a13d-1174-48c8-9b20-84dae43d7987"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "14\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6. (7б) Визначте функцію, яка приймає iterable (ітерабельний обʼєкт, напр. список), що складається з 7ми рядкових значень - назв погодних умов (напр. \"sunny\") за кожен день у тижні. Повертає функція словник, де ключами є рядки з погодними умовами, а значеннями - кількість разів, скільки дана погода була протягом тижня (напр. {'sunny': 1, ...}). Викличте цю функцію та виведіть результат її роботи на екран."
+      ],
+      "metadata": {
+        "id": "D3mwQGNOBBs4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def count_weather_conditions(weather_data):\n",
+        "    weather_count = {}\n",
+        "    for condition in weather_data:\n",
+        "        if condition in weather_count:\n",
+        "            weather_count[condition] += 1\n",
+        "        else:\n",
+        "            weather_count[condition] = 1\n",
+        "    return weather_count\n",
+        "\n",
+        "weekly_weather = ['sunny', 'thunder', 'sunny', 'snowy', 'rainy', 'cloudy', \"sunny\"]\n",
+        "result = count_weather_conditions(weekly_weather)\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "id": "OsWm-hKcBFyn",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "7bd0b25a-256d-4f99-b74b-e89d4530f620"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'sunny': 3, 'thunder': 1, 'snowy': 1, 'rainy': 1, 'cloudy': 1}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7. (15б) Напишіть програму, яка б шукала необхідне число у впорядкованому списку цілочислених значень, де\n",
+        "число має вводитись з консолі.\n",
+        "власне алгоритм пошуку винесений в окрему функцію, яка повертає булеве значення (знайдено число - True, не знайдено - False).\n",
+        "в залежності від результату функції, виведіть на екран повідомлення про успішний або ж неуспішний пошук.\n",
+        "Зауваження: використовувати оператор in заборонено."
+      ],
+      "metadata": {
+        "id": "RMiCcdOsBKQT"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "UNCZg65OBOy-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# II. Lambda functions."
+      ],
+      "metadata": {
+        "id": "Ae1n_OvLBTsy"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "8. (4б) В яких випадках варто використовувати лямбда-функції?"
+      ],
+      "metadata": {
+        "id": "xaD_wSlaCWen"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Використання лямбда-виразів дає наступні переваги:**\n",
+        "\n",
+        "лямбда-вирази зручні для створення функцій, що мають маленькі розміри;\n",
+        "\n",
+        "лямбда-вирази спрощують програмний код, в який потрібно вбудовувати невеликі фрагменти;\n",
+        "\n",
+        "програмний код може зручно використовувати лямбда-вирази замість визначення функцій там де потрібно;\n",
+        "\n",
+        " Зменшення кількості імен в програмі знижує можливі конфлікти цих імен з іншими іменами у файлі модуля."
+      ],
+      "metadata": {
+        "id": "42MB6OoLCakR"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "7ONwRqXdHA3k"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "9. (9б) Визначте список з рядками. Після цього визначте анонімну функцію для отримання першого символу у верхньому регістрі для кожного рядка списку.\n",
+        "Підказка: використовуйте анонімну функцію в якості агрумента до вбудованої ф-ції, яка створена для застосування функцій над iterable обʼєктами. Результат виведіть на екран у вигляді кортежу."
+      ],
+      "metadata": {
+        "id": "USrzrk7GCedk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "my_list =[\"Harry Potter\", \"Lord of rings\", \"The Little Prince\", \"Jane Eyre\"]\n",
+        "upper_first_char= lambda s: s[0].upper()\n",
+        "new_list = tuple(map(upper_first_char, my_list))\n",
+        "print(new_list)"
+      ],
+      "metadata": {
+        "id": "M8QWUsMlCjWH",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "dde5fe7f-2101-4e5d-c6d4-02094df09551"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "('H', 'L', 'T', 'J')\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "10. (10б) Визначте список з числовими значеннями (і цілими, і з рухомою комою). а) Відфільтруйте всі числа, які діляться націло на 3 за допомогою вбудованої функції та анонімної функції в якості аргумента). Збережіть результат у змінній, не приводяти явно до будь-якого типу. б) Використовуючи результат на кроці 12.а у якості аргументу, та за допомогою лямбда-функції в якості іншого аргументу до вбудованої функції, додайте до кожного елементу число 1 та опісля зведіть у квадрат. Остаточний результат приведіть явно до списку та виведіть на екран."
+      ],
+      "metadata": {
+        "id": "9fyUhXOoCtGp"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "numbers = [1, 3, 12, 15, 17, 20, 23, 33, 36, 31, 40]\n",
+        "\n",
+        "filtered_numbers_list = list(filter(lambda x: x % 3 == 0, numbers))\n",
+        "\n",
+        "print(filtered_numbers_list)"
+      ],
+      "metadata": {
+        "id": "exEx2_okCsql"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "[Текст ссылки](https://)# III. Decorators."
+      ],
+      "metadata": {
+        "id": "o_x8cG_WC7jp"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "11. (11б) Визначте декоратор, який би виводив у консоль повідомлення про початок роботи і назву функції (напр. my_function._ _ name _ _), а після відпрацювання функції - повідомлення про закінчення роботи і назву функції, що задекорована."
+      ],
+      "metadata": {
+        "id": "mhxS4-mfC8LQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def decorator(func):\n",
+        "    def wrap_the_function(*args, **kwargs):\n",
+        "        print(f\"Start of {func.__name__} function\")\n",
+        "        result = func(*args, **kwargs)\n",
+        "        print(f\"End of {func.__name__} function\")\n",
+        "        return result\n",
+        "    return wrap_the_function\n",
+        "\n",
+        "@decorator\n",
+        "def my_function(x, y):\n",
+        "    return x + y\n",
+        "\n",
+        "final_result = my_function(17, 18)\n",
+        "print(final_result)\n"
+      ],
+      "metadata": {
+        "id": "srd1ygWjDGhO",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "22a37768-6539-4c14-fcbb-a165001e0d28"
+      },
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Start of my_function function\n",
+            "End of my_function function\n",
+            "35\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "12. (4б) Задекоруйте двома різними способами функції з завдання 4 та 5 декоратором із завдання 11. (**УВАГА**: не декоруйте функції двічі!)."
+      ],
+      "metadata": {
+        "id": "rxGZwVBiDph3"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def decorator(func):\n",
+        "     def wrapTheFunction(*args, **kwargs):\n",
+        "        print(\"Decorated!\")\n",
+        "        return func(*args, **kwargs)\n",
+        "        return wrapTheFunction\n",
+        "\n",
+        "def numbers(a, b=1):\n",
+        "    return a - b\n",
+        "\n",
+        "def function(a, b):\n",
+        "    def f(a, b):\n",
+        "        if b == 0:\n",
+        "            return None\n",
+        "        return a / b\n",
+        "\n",
+        "    result = f(a, b)\n",
+        "    return result\n",
+        "\n",
+        "result1 = numbers(15)\n",
+        "print(result1)\n",
+        "\n",
+        "result2 = function(26, 0)\n",
+        "print(result2)"
+      ],
+      "metadata": {
+        "id": "06lj7eq_DwZe",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "c5cec047-88d1-4702-fe7a-5381fc720c3e"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "14\n",
+            "None\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "13. (2б) Викличте одну з задекорованих функцій і виведіть її результат на екран."
+      ],
+      "metadata": {
+        "id": "P0ep1urBDzf-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "result1 = function(26, 0)\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "id": "1QvTw0ctD0S3",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "a9d8820f-3087-4db0-fd05-73ff1c79945a"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "14\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# IV. Recursion."
+      ],
+      "metadata": {
+        "id": "poECCpuoD2S9"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "14. (4б) Назвіть дві частини функції, які є обовʼязковими для того, щоб називати її рекурсивною."
+      ],
+      "metadata": {
+        "id": "DqkURfdsD7MY"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Основні частини рекурсивної функції:\n",
+        "\n",
+        "1.   Кожна рекурсивна функція повинна мати базову умову, яка зупиняє рекурсію\n",
+        "2.   Рекурсивний крок: Для того, щоб базовий випадок відбувся, потрібна передача змінених даних кожної нової функції.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "HYW6ttIeIQIU"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "15. (15б) Визначте функцію, яка рекурсивно реалізовує пошук числа у послідовності Фібоначчі за її індексом (нумерація починається з нуля). Наприклад, потрібно знайти перше число у послідовності, тоді функція прийматиме 0 у якості аргумента і повертатиме 1, якщо ж знаходити третє число (індекс 2) послідовності, то функція повертатиме 2, якщо ж знаходити десяте число (індекс 9), то функція повертатиме 55."
+      ],
+      "metadata": {
+        "id": "WYVt20UmEA35"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def fibonacci(index):\n",
+        "    if index == 0:\n",
+        "        return 0\n",
+        "    elif index == 1:\n",
+        "        return 1\n",
+        "    else:\n",
+        "        return fibonacci(index - 1) + fibonacci(index - 2)\n",
+        "\n",
+        "print(fibonacci(0))\n",
+        "print(fibonacci(5))\n",
+        "print(fibonacci(7))"
+      ],
+      "metadata": {
+        "id": "xIMhp05AIpV_",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "44756aad-cb1c-46c0-8c3b-7926bddcb032"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "5\n",
+            "13\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Вітаю! Ви велика(ий) молодець, що впоралась(вся). Похваліть себе та побалуйте чимось приємним. Я Вами пишаюся."
+      ],
+      "metadata": {
+        "id": "ytXC8n_4Ip0W"
+      }
+    }
+  ]
+}
